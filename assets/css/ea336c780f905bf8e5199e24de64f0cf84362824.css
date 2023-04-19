@@ -471,6 +471,10 @@ mention token. */
 .notion-focusable-within:focus-within {
     box-shadow: rgba(35, 131, 226, 0.57) 0 0 0 1px inset, rgba(35, 131, 226, 0.35) 0 0 0 2px !important
     }
+/* Focusable tokens inside the editor should show focus ring */
+.notion-focusable-token:focus-visible {
+    box-shadow: rgba(35, 131, 226, 0.57) 0 0 0 1px inset, rgba(35, 131, 226, 0.35) 0 0 0 2px !important
+    }
 /* ==================================================================== */
 /* Cursor */
 /* ==================================================================== */
@@ -1056,6 +1060,19 @@ table > tr {
 *::selection {
     /* Notion brand blue */
     background: rgba(35, 131, 226, 0.28)
+    }
+/**
+ * Safari 16.4 applies the ::selection pseudo-element to selectable
+ * blocks that are part of the user's selection, which makes
+ * it look like the user is making both a block selection *and* a
+ * multi-text selection.  This ensures that the selectable blocks
+ * don't appear selected in this case.
+ *
+ * (Note that actual block selections will still appear normally, as
+ * that styling is done through a completely different code path.)
+ */
+.notion-selectable::selection {
+    background: transparent
     }
 #notion-app b {
     font-weight: 600
