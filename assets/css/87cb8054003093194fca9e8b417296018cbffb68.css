@@ -499,6 +499,11 @@ mention token. */
 /* ==================================================================== */
 /* Animation */
 /* ==================================================================== */
+/* TODO(pm-announcement): Remove after launch */
+.pm-announcement-modal-fadein {
+    animation: fadein ease-in 1s;
+    animation-fill-mode: both
+    }
 .notion-fadein {
     animation: fadein ease-in 330ms
     }
